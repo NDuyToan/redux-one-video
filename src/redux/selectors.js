@@ -1,5 +1,7 @@
 import { createSelector } from "reselect";
 
+export const searchTextSelector = (state) => state.filter.search;
+
 export const todoListSelector = (state) => {
   const searchText = searchTextSelector(state);
 
@@ -8,4 +10,3 @@ export const todoListSelector = (state) => {
   );
   return todoListRemaining;
 };
-export const searchTextSelector = (state) => state.filter.search;
