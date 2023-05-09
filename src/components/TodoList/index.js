@@ -28,7 +28,7 @@ export default function TodoList() {
 
   const handlePriorityChange = (value) => {
     setPriority(value);
-    console.log("value11", value);
+    console.log("value12221", value);
   };
 
   return (
