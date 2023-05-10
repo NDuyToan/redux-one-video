@@ -1,11 +1,12 @@
 import { Col, Row, Input, Typography, Radio, Select, Tag } from "antd";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import {
-  priorityFilterChange,
-  searchFilterChange,
-  statusFilterChange,
-} from "../../redux/actions";
+// import {
+//   priorityFilterChange,
+//   searchFilterChange,
+//   statusFilterChange,
+// } from "../../redux/actions";
+import filterSlice from "./filterSlice";
 
 const { Search } = Input;
 
@@ -17,17 +18,17 @@ export default function Filters() {
 
   const handleSearchTextChange = (value) => {
     setSearchText(value);
-    dispatch(searchFilterChange(value));
+    dispatch(filterSlice.actions.searchFilterChange(value));
   };
 
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
-    dispatch(statusFilterChange(e.target.value));
+    dispatch(filterSlice.actions.statusFilterChange(e.target.value));
   };
 
   const handlePriorityChange = (value) => {
     console.log(`selected ${value}`);
-    dispatch(priorityFilterChange(value));
+    dispatch(filterSlice.actions.priorityFilterChange(value));
   };
 
   return (
